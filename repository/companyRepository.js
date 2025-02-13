@@ -1,11 +1,12 @@
 const Company = require("../model/CompanySchema");
 
-exports.createCompany = async (payload) => {
-  let company = await Company.create(payload);
-  return company;
-};
 exports.getAllCompany = async (query) => {
   let company = await Company.find(query);
+  return company;
+};
+
+exports.createCompany = async (payload) => {
+  let company = await Company.create(payload);
   return company;
 };
 

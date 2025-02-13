@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 require("dotenv").config();
+
 const genereateToken = async (data) => {
   try {
     let token = await jwt.sign(data, process.env.private_key);

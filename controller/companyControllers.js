@@ -69,11 +69,11 @@ exports.deleteCompany = async (req, res) => {
   }
 };
 
-exports.getUnverified= async (req, res) => {
-try {
-    let company=await companyService.getAllUnverified()
-   return res.send(company)
-} catch (error) {
-  return res.status(500).json({ error: error });
-}
-}
+exports.getUnverified = async (req, res) => {
+  try {
+    let company = await companyService.getAllUnverified();
+    return res.send(company);
+  } catch (error) {
+    return res.status(500).json({ error: error });
+  }
+};

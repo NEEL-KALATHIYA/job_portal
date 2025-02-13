@@ -2,11 +2,11 @@ const { default: mongoose } = require("mongoose");
 
 const userSchema = new mongoose.Schema(
   {
-    name: String,
-    email: String,
-    password: String,
-    profile_picture: String,
-    number: String,
+    name: { type: String },
+    email: { type: String },
+    password: { type: String },
+    profile_picture: { type: String },
+    number: { type: String },
     gender: { type: String, enum: ["male", "female", "other"] },
     role: {
       type: String,

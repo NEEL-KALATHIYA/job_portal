@@ -9,6 +9,17 @@ const sendMail = require("../utils/mail");
 const userDetailService = require("./detailService");
 
 let map = new Map();
+
+exports.findUserByQuery = async (query) => {
+  let user = await userRepository.getUserByQuery(query);
+  return user;
+};
+
+exports.getAllUSer = async () => {
+  let users = await userRepository.getUsers();
+  return users;
+};
+
 exports.createUser = async (data) => {
   let user = await userRepository.getUserByEmail(data.email);
   if (user) {
@@ -93,14 +104,4 @@ exports.getUserById = async (id) => {
     user,
     details,
   };
-};
-
-exports.findUserByQuery = async (query) => {
-  let user = await userRepository.getUserByQuery(query);
-  return user;
-};
-
-exports.getAllUSer = async () => {
-  let users = await userRepository.getUsers();
-  return users;
 };

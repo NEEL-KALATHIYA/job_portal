@@ -1,19 +1,5 @@
 const { getCompanyById } = require("../repository/companyRepository");
 
-exports.create = async (data) => {
-  try {
-    let company = await getCompanyById(data.companyId);
-    if (company.isVerified) {
-      let job = await Job.create(data);
-      return job;
-    } else {
-      throw new Error("unverified company");
-    }
-  } catch (error) {
-    throw new Error(error);
-  }
-};
-
 exports.getAll = async (query) => {
   try {
     let jobs = await Job.find(query);
@@ -35,6 +21,20 @@ exports.getAllByCompanyId = async (companyId) => {
   try {
     let jobs = await Job.find({ companyId: companyId });
     return jobs;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+exports.create = async (data) => {
+  try {
+    let company = await getCompanyById(data.companyId);
+    if (company.isVerified) {
+      let job = await Job.create(data);
+      return job;
+    } else {
+      throw new Error("unverified company");
+    }
   } catch (error) {
     throw new Error(error);
   }

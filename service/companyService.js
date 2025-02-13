@@ -1,11 +1,17 @@
 const companyRepository = require("../repository/companyRepository");
 
-exports.createCompany = async (payload) => {
-  let company = await companyRepository.createCompany(payload);
-  return company;
-};
 exports.getAllCompany = async () => {
   let company = await companyRepository.getAllCompany();
+  return company;
+};
+
+exports.getAllUnverified = async () => {
+  let company = await companyRepository.getAllCompany({ isVerified: false });
+  return company;
+};
+
+exports.createCompany = async (payload) => {
+  let company = await companyRepository.createCompany(payload);
   return company;
 };
 
@@ -21,10 +27,5 @@ exports.updateCompany = async (id, payload) => {
 
 exports.deleteCompany = async (id) => {
   let company = await companyRepository.deleteCompany(id);
-  return company;
-};
-
-exports.getAllUnverified = async () => {
-  let company = await companyRepository.getAllCompany({ isVerified: false });
   return company;
 };

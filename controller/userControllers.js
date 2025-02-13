@@ -8,7 +8,7 @@ exports.signupUser = async (req, res) => {
   }
 };
 
-exports.signinUser = async (req, res) => {
+exports.loginUser = async (req, res) => {
   try {
     let token = await userService.login(req.body);
     return res.send({ token: token });
