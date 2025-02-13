@@ -1,5 +1,4 @@
 const jobService = require("../service/jobService");
-// Create a new job
 exports.createJob = async (req, res) => {
   try {
     req.body.userId = req.user.id;
@@ -10,7 +9,6 @@ exports.createJob = async (req, res) => {
   }
 };
 
-// Get all jobs
 exports.getAllJobs = async (req, res) => {
   try {
     const jobs = await jobService.getAll(req.query);
@@ -20,7 +18,6 @@ exports.getAllJobs = async (req, res) => {
   }
 };
 
-// Get a job by ID
 exports.getJobById = async (req, res) => {
   try {
     const job = await jobService.getJobById(req.params.id);

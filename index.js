@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/api/v1", decodeToken,appRoutes);
+app.use("/api/v1",appRoutes);
 
 const PORT = process.env.PORT || 8090;
 app.listen(PORT, () => {
