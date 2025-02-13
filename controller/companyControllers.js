@@ -1,4 +1,4 @@
-const companyService = require("../service/company");
+const companyService = require("../service/companyService");
 
 exports.createCompany = async (req, res) => {
   try {

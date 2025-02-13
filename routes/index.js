@@ -1,8 +1,8 @@
 const { Router } = require("express");
-const userRoutes = require("./user");
-const userDetailRoutes = require("./details");
-const companyRoutes = require("./company");
-const jobRoutes = require("./job");
+const userRoutes = require("./userRoute");
+const userDetailRoutes = require("./detailsRoute");
+const companyRoutes = require("./companyRoute");
+const jobRoutes = require("./jobRoute");
 
 const index = Router();
 index.use("/users", userRoutes);

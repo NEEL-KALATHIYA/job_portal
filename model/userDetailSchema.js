@@ -1,4 +1,5 @@
-const mongoose = require("mongoose");
+const { default: mongoose } = require("mongoose");
+
 
 const workExperienceSchema = new mongoose.Schema({
   companyName: { type: String, required: true, trim: true },

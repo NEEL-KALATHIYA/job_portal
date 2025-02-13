@@ -1,4 +1,4 @@
-const userDetailRepository = require("../repository/details");
+const userDetailRepository = require("../repository/detailsRepository");
 
 exports.getUserDetails = async (userId) => {
   try {
@@ -11,7 +11,6 @@ exports.getUserDetails = async (userId) => {
 
 exports.createUserDetails = async (payload) => {
   try {
-    
     let userdata = await userDetailRepository.createDetail(payload);
     return userdata;
   } catch (error) {

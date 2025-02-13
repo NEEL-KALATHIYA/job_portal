@@ -1,4 +1,4 @@
-const companyRepository = require("../repository/company");
+const companyRepository = require("../repository/companyRepository");
 
 exports.createCompany = async (payload) => {
   let company = await companyRepository.createCompany(payload);

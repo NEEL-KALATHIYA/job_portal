@@ -1,4 +1,4 @@
-const userRepository = require("../repository/user");
+const userRepository = require("../repository/userRepository");
 const {
   hashPassword,
   genereateToken,
@@ -6,7 +6,7 @@ const {
   decodeToken,
 } = require("../utils/helper");
 const sendMail = require("../utils/mail");
-const userDetailService = require("./details");
+const userDetailService = require("./detailService");
 
 let map = new Map();
 exports.createUser = async (data) => {

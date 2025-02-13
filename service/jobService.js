@@ -1,5 +1,4 @@
-const Job = require("../model/jobs");
-const { getCompanyById } = require("../repository/company");
+const { getCompanyById } = require("../repository/companyRepository");
 
 exports.create = async (data) => {
   try {

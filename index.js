@@ -8,9 +8,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// app.use("/api/v1", decodeToken,appRoutes);
+app.use("/api/v1", decodeToken,appRoutes);
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8090;
 app.listen(PORT, () => {
   console.log("listening on port PORT", PORT);
   connectDb();

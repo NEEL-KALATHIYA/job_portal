@@ -1,4 +1,4 @@
-const jobService = require("../service/jobs");
+const jobService = require("../service/jobService");
 // Create a new job
 exports.createJob = async (req, res) => {
   try {

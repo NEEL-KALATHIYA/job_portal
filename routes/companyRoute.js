@@ -1,5 +1,5 @@
 const express = require("express");
-const companyController = require("../controller/company");
+const companyController = require("../controller/companyControllers");
 const Ability = require("../middleware/Ability");
 
 const router = express.Router();
@@ -11,7 +11,6 @@ router.post(
 );
 
 router.get("/", Ability(["ADMIN"]), companyController.getAllCompany);
-
 
 router.get("/:id", companyController.getCompanyById);
 

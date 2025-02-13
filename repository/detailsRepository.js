@@ -1,4 +1,4 @@
-const UserDetails = require("../model/userDetail");
+const UserDetails = require("../model/userDetailSchema");
 
 exports.getByUserId = async (userId) => {
   let user = await UserDetails.findOne({ user: userId });
@@ -11,6 +11,8 @@ exports.createDetail = async (payload) => {
 };
 
 exports.updateDetail = async (id, payload) => {
-  let userDetail = await UserDetails.findByIdAndUpdate(id, payload,{new: true});
+  let userDetail = await UserDetails.findByIdAndUpdate(id, payload, {
+    new: true,
+  });
   return userDetail;
 };

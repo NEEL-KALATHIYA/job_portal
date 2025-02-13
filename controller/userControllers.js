@@ -1,4 +1,4 @@
-const userService = require("../service/user");
+const userService = require("../service/userService");
 exports.signupUser = async (req, res) => {
   try {
     let user = await userService.createUser(req.body);
@@ -71,9 +71,8 @@ exports.verifyEmail = async (req, res) => {
   let { token, otp } = req.params;
   try {
     let User = await userService.verifyEmail(token, otp);
-    return res.send({ message:"Verified email"});
+    return res.send({ message: "Verified email" });
   } catch (error) {
     return res.status(404).send({ message: error.message });
   }
-
 };

@@ -1,4 +1,4 @@
-const User = require("../model/user");
+const User = require("../model/userSchema");
 
 exports.register = async (data) => {
   let user = await User.create(data);

@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const userController = require("../controller/user");
+const userController = require("../controller/userControllers");
 const Ability = require("../middleware/Ability");
 const routes = Router();
 routes.post("/signup", userController.signupUser);
